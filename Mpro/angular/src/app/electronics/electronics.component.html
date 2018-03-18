@@ -1,0 +1,49 @@
+<div class="nav-side-menu" style="position: fixed; margin-top:80px; margin-left:10px; width:18%; height:100%">
+    <div class="brand">Filters</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        <div class="menu-list">
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <i class="fa fa-dashboard fa-lg"></i> Filter by :
+                  <input style="padding-top:10px" type="text" [(ngModel)]="itemname" name="itemname" class="form-control" placeholder="Search Product by name"/>
+                </li>
+                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> Name <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li class="active"><a href="#">All Electronics</a></li>
+                    <li><a href="#">TV & Appliances</a></li>
+                    <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Mobiles & Accessories</a></li>
+                    <li><a href="#">Desktop Peripherals</a></li>
+                    <li><a href="#">Featured Products</a></li>
+                </ul>
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> Prices <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="service">
+                  <li>below Rs.4999/day</li>
+                  <li>Rs.5000 - Rs 1499</li>
+                  <li>Rs.1500 & above</li>
+                </ul>
+            </ul>
+     </div>
+</div>
+
+<div style=" position:absolute; left:290px; ">
+    <div class="col-md-4" style=" position:relative; left:20px; top:20px; display:inline-block" *ngFor="let item of electronicItems | search:itemname">
+      <div class="panel panel-primary">
+  
+        <ul class="list-group text-center" style="list-style-type: none; width:75%">
+          <li class="list-group-item"><img src={{item.img}} /></li>          
+          <li class="list-group-item"><i class="icon-ok text-primary"></i>Name : {{item.name}}</li>
+          <li class="list-group-item"><i class="icon-ok text-primary"></i>Brand : {{item.brand}}</li>
+          <li class="list-group-item"><i class="icon-ok text-primary"></i>Price : {{item.price}}</li>
+          <li class="list-group-item"><button class="btn btn-secondary" (click)="addToCart(item)" >Add to Cart</button></li>
+          <li class="list-group-item"><button class="btn btn-secondary"  [routerLink]="['/cart']">Proceed to Cart</button></li>      
+        </ul>
+      </div>
+    </div>
+  </div>
+  

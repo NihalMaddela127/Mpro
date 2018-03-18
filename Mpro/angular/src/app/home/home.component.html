@@ -1,0 +1,10 @@
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div *ngFor="let item of allInOneItems">
+          {{item.name}}
+          <img class="d-block w-100" src="item.img" alt="">
+      </div>
+    </div>
+  </div>
+</div>
