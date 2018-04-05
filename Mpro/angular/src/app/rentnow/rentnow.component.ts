@@ -14,6 +14,13 @@ export class RentnowComponent implements OnInit {
     this.rentItems = this.rentNowService.rentItems;
   }
 
+  confirmRentals(){
+    this.rentNowService.rentNow(this.rentItems).subscribe(data => {
+      console.log(this.rentItems);
+      console.log("Data sent to rent now service");
+    });
+  }
+
   ngOnInit() {
   }
 

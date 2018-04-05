@@ -11,6 +11,7 @@ async function getData( err, res ){
             }
             else{
                 res(data);
+                console.log(data);
             }
         });
     });

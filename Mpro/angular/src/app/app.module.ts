@@ -4,13 +4,12 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
-import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './common/pipes/search.pipe';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import { LoginService } from './services/login.service';
+// import { LoginService } from './services/login.service';
 import { ElectronicsComponent } from './electronics/electronics.component';
 import { AutomobilesComponent } from './automobiles/automobiles.component';
 import { ClothingComponent } from './clothing/clothing.component';
@@ -22,8 +21,11 @@ import { RentnowComponent } from './rentnow/rentnow.component';
 import { MyrentalsComponent } from './myrentals/myrentals.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { CartService } from './cart/cart.service';
+import { LoginService } from './login/login.service';
 import { RentnowService } from './rentnow/rentnow.service';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
     MyrentalsComponent,
     FooterComponent,
     SidebarComponent,
+    RegisterComponent,
   ],
   imports: [
     FormsModule,
@@ -60,7 +63,7 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [LoginService, AutomobilesService, ElectronicsService, ClothingService, CartService, RentnowService],
+  providers: [ AutomobilesService, ElectronicsService, ClothingService, CartService, RentnowService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

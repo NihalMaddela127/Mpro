@@ -1,9 +1,8 @@
 const mongodb=require('mongodb').MongoClient;
-require('dotenv').config();
 
 module.exports=function db(){
     return new Promise(( res, rej ) => {
-        mongodb.connect( process.env.dbURI, function(err, database) {
+        mongodb.connect( "mongodb://127.0.0.1:27017/test", function(err, database) {
             if (err) {
                 console.error(err);
                 rej(err);

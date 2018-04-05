@@ -11,7 +11,10 @@ export class MyrentalsComponent implements OnInit {
   myRentalItems : schemaI[] = [];
   
   constructor(private rentNowService : RentnowService){
-    this.myRentalItems = this.rentNowService.rentItems;
+    this.rentNowService.getRentals().subscribe((res:schemaI[]) => {
+      this.myRentalItems = res;
+      console.log(this.myRentalItems);
+    })
   }
 
   ngOnInit() {

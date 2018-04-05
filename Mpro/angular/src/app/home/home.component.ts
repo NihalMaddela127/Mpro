@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit {
     this.automobileItems = this.amService.automobileItems;
     this.clothingItems = this.clothService.clothingItems;
     this.electronicItems = this.elecService.electronicItems;
-    this.allInOneItems.concat(this.electronicItems, this.clothingItems, this.automobileItems);
-    console.log(this.allInOneItems);
+    // this.allInOneItems.concat(this.electronicItems, this.clothingItems, this.automobileItems);
+    console.log(this.electronicItems);
   }
 
   ngOnInit() {

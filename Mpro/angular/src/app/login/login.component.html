@@ -1,0 +1,32 @@
+<h2>
+    <strong> Login </strong>
+</h2>
+<form class="form-group" novalidate (ngSubmit)="auth(signupForm); signupForm.reset()" #signupForm="ngForm">
+    <label class="col-md-8">
+        Username:
+        <input class="form-control" type="text" name="username" id="username" placeholder="Username required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$"
+            required minlength="8" [(ngModel)]="user.userName" #userName="ngModel" />
+    </label>
+    <span class="help-block" *ngIf="(userName.touched || userName.dirty) && (!userName.valid)">
+        <span *ngIf="userName.errors.required">
+            Please fill in the Username
+        </span>
+        <span *ngIf="userName.errors.minlength">
+            Username more than 8 charecters
+        </span>
+    </span>
+    <label class="col-md-8">
+        Password:
+        <input class="form-control" type="password" name="password" id="password" placeholder="Password required" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+            required minlength="8" [(ngModel)]="user.Password" #Password="ngModel" />
+    </label>
+    <span class="help-block" *ngIf="(Password.touched || Password.dirty) && (!Password.valid)">
+        <span *ngIf="Password.errors.required">
+            Please fill in the Password
+        </span>
+        <span *ngIf="Password.errors.minlength">
+            Password more than 8 charecters
+        </span>
+    </span>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
